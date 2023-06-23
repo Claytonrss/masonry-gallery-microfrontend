@@ -1,0 +1,15 @@
+{
+  "name": "masonry-gallery-microfrontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Claytonrss/masonry-gallery-microfrontend.git",
+  "author": "Clayton Souza <clayton.rssouza@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=18.12.1"
+  },
+  "workspaces": [
+    "apps/*"
+  ]
+}
