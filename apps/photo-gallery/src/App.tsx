@@ -1,4 +1,4 @@
-import { PhotoGallery } from "./components/PhotoGallery";
+import PhotoGallery from "./components/PhotoGallery";
 
 function App() {
   return <PhotoGallery />;
