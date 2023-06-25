@@ -8,7 +8,7 @@ export default defineConfig({
       remotes: {
         photolist: "http://localhost:5001/assets/remoteEntry.js",
       },
-      shared: ["react", "react-dom"],
+      shared: ["react", "react-dom", "react-router-dom"],
     }),
   ],
   build: {
