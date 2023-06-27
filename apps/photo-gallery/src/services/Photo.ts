@@ -12,7 +12,6 @@ export async function getPhotosByCategory(
       per_page: 18,
     });
     if (!("photos" in response)) throw new Error("No photos found");
-    console.log("response: ", response);
     return response;
   } catch (error) {
     console.error(error);

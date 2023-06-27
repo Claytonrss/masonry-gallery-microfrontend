@@ -1,10 +1,13 @@
 import { MyRoutes } from "./routes";
 import { ThemeProvider } from "./context/themeContext";
+import { PresentationProvider } from "./context/PresentationContext";
 
 function App() {
   return (
     <ThemeProvider>
-      <MyRoutes />
+      <PresentationProvider>
+        <MyRoutes />
+      </PresentationProvider>
     </ThemeProvider>
   );
 }

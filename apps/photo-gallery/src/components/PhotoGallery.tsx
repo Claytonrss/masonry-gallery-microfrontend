@@ -1,12 +1,17 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
-import Masonry from "react-masonry-css";
-import { useFetchPhotosByCategory } from "../hooks/useFetchPhotosByCategory";
 import { createAndShuffleArray } from "../utils/array";
+import { useFetchPhotosByCategory } from "../hooks/useFetchPhotosByCategory";
 import Loading from "./Loading";
+import PhotoGalleryMasonry from "./PhotoGalleryMasonry";
+import PhotoGalleryQuad from "./PhotoGalleryQuad";
 
-const PhotoGallery = () => {
-  const { data, error } = useFetchPhotosByCategory("nature");
+type Props = {
+  category: string;
+  layout: "default" | "masonry";
+};
+
+const PhotoGallery = ({ category, layout }: Props) => {
+  const { data, error } = useFetchPhotosByCategory(category);
   const [orderPhotos, setOrderPhotos] = useState<number[]>([]);
 
   const shufflePhotos = () => {
@@ -22,12 +27,6 @@ const PhotoGallery = () => {
     return <Loading />;
   }
 
-  const breakpointColumnsObj = {
-    default: 3,
-    1100: 2,
-    700: 1,
-  };
-
   return (
     <div>
       <div>
@@ -35,23 +34,12 @@ const PhotoGallery = () => {
           Shuffle
         </button>
       </div>
-      <div className="px-4 pb-4">
-        <Masonry
-          breakpointCols={breakpointColumnsObj}
-          className="my-masonry-grid"
-          columnClassName="my-masonry-grid_column"
-        >
-          {data.photos.map(({ id, src, alt }, index) => (
-            <motion.div key={id} style={{ order: orderPhotos[index] }} layout>
-              <img
-                className="h-auto max-w-full rounded-lg mt-4"
-                src={index % 2 === 0 ? src.portrait : src.landscape}
-                alt={alt || "Photo by Pexels"}
-              />
-            </motion.div>
-          ))}
-        </Masonry>
-      </div>
+      {layout === "masonry" && (
+        <PhotoGalleryMasonry photos={data.photos} orderPhotos={orderPhotos} />
+      )}
+      {layout === "default" && (
+        <PhotoGalleryQuad photos={data.photos} orderPhotos={orderPhotos} />
+      )}
     </div>
   );
 };
