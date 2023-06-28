@@ -15,7 +15,7 @@ type PresentationProviderProps = {
 
 const initialValue: PresentationContextType = {
   category: "nature",
-  layout: "masonry",
+  layout: "default",
   setCategory: () => {
     return;
   },

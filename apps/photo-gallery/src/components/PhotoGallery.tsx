@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { createAndShuffleArray } from "../utils/array";
 import { useFetchPhotosByCategory } from "../hooks/useFetchPhotosByCategory";
 import Loading from "./Loading";
@@ -14,10 +14,16 @@ const PhotoGallery = ({ category, layout }: Props) => {
   const { data, error } = useFetchPhotosByCategory(category);
   const [orderPhotos, setOrderPhotos] = useState<number[]>([]);
 
-  const shufflePhotos = () => {
+  const reorderPhotos = useCallback(() => {
     if (data?.photos.length)
       setOrderPhotos(createAndShuffleArray(data.photos.length));
-  };
+  }, [data?.photos.length]);
+
+  useEffect(() => {
+    window.addEventListener("reorderPhotos", () => {
+      reorderPhotos();
+    });
+  }, [reorderPhotos]);
 
   if (error) {
     return <div>Error: {error.error}</div>;
@@ -28,19 +34,14 @@ const PhotoGallery = ({ category, layout }: Props) => {
   }
 
   return (
-    <div>
-      <div>
-        <button className="px-4 py-2" type="button" onClick={shufflePhotos}>
-          Shuffle
-        </button>
-      </div>
+    <>
       {layout === "masonry" && (
         <PhotoGalleryMasonry photos={data.photos} orderPhotos={orderPhotos} />
       )}
       {layout === "default" && (
         <PhotoGalleryQuad photos={data.photos} orderPhotos={orderPhotos} />
       )}
-    </div>
+    </>
   );
 };
 

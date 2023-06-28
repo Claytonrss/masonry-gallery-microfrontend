@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#root > div[data-theme] {
+  min-height: 100vh;
+}

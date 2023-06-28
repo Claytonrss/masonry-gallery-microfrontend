@@ -4,7 +4,7 @@ import SwapTheme from "../SwapTheme";
 const NavBar = () => {
   return (
     <div>
-      <Navbar className="flex  w-full component-preview p-4 align-middle justify-between gap-2 font-sans ">
+      <Navbar className="flex  w-full component-preview py-4 align-middle justify-between gap-2 font-sans ">
         <Navbar.Start>
           <Button className="text-xl normal-case" color="ghost">
             PhotoGallery (Microfrontends)
