@@ -10,18 +10,20 @@ type ThemeProviderProps = {
   children: React.ReactNode;
 };
 
-export const ThemeContext = React.createContext<ThemeContextType>({
-  theme: "light",
+const initialValue: ThemeContextType = {
+  theme: "dark",
   toggleTheme: () => {
     return;
   },
-});
+};
+
+export const ThemeContext = React.createContext<ThemeContextType>(initialValue);
 
 const THEME_LOCAL_STORAGE_KEY = "@photoGallery-1.0.0-theme";
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const defaultTheme =
-    window.localStorage.getItem(THEME_LOCAL_STORAGE_KEY) || "light";
+    window.localStorage.getItem(THEME_LOCAL_STORAGE_KEY) || initialValue.theme;
   const [theme, setTheme] = useState(defaultTheme);
 
   useEffect(() => {

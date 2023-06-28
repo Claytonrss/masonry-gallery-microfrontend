@@ -9,3 +9,4 @@ https://flowbite.com/docs/components/spinner/
 - Modal
 - loading
 - HandlerErros (QUando o microfrontend cair?)
+- Maps

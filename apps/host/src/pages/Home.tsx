@@ -2,8 +2,9 @@ import { Suspense, lazy, useContext } from "react";
 import NavBar from "../components/NavBar";
 import MenuFilters from "../components/MenuFilters";
 import { PresentationContext } from "../context/PresentationContext";
+import Loading from "../components/Loading";
 
-const PhotoGallery = lazy(() => import("photolist/PhotoGallery"));
+const PhotoGallery = lazy(() => import("PhotoGallery/PhotoGallery"));
 
 export const Home = () => {
   const { category, layout } = useContext(PresentationContext);
@@ -12,7 +13,7 @@ export const Home = () => {
     <div className="p-2">
       <NavBar />
       <MenuFilters />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loading />}>
         <PhotoGallery category={category} layout={layout} />
       </Suspense>
     </div>

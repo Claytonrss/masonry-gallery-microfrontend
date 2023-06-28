@@ -3,8 +3,8 @@ import PhotoGallery from "./components/PhotoGallery";
 function App() {
   return (
     <>
-      <PhotoGallery category="nature" layout="default" />
       <PhotoGallery category="technology" layout="masonry" />
+      <PhotoGallery category="nature" layout="default" />
     </>
   );
 }

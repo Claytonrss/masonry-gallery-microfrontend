@@ -5,8 +5,7 @@ import { GalleryProps } from "../types/gallery";
 const PhotoGalleryMasonry = ({ photos, orderPhotos }: GalleryProps) => {
   const breakpointColumnsObj = {
     default: 3,
-    1100: 2,
-    700: 1,
+    768: 1,
   };
 
   return (
