@@ -1,9 +1,9 @@
+import IconLayoutDefault from "@/assets/icon_layout_default.svg";
+import IconLayoutMasonry from "@/assets/icon_layout_masonry.svg";
+import IconLayoutReorder from "@/assets/icon_layout_reorder.svg";
+import { PresentationContext } from "@/context/PresentationContext";
 import { useContext } from "react";
 import { Button, ButtonGroup } from "react-daisyui";
-import { PresentationContext } from "../../context/PresentationContext";
-import IconLayoutDefault from "./../../assets/icon_layout_default.svg";
-import IconLayoutMasonry from "./../../assets/icon_layout_masonry.svg";
-import IconLayoutReorder from "./../../assets/icon_layout_reorder.svg";
 
 const MenuFilters = () => {
   const {

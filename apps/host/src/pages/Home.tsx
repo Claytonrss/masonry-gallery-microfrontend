@@ -1,8 +1,8 @@
 import { Suspense, lazy, useContext } from "react";
-import NavBar from "../components/NavBar";
-import MenuFilters from "../components/MenuFilters";
-import { PresentationContext } from "../context/PresentationContext";
-import Loading from "../components/Loading";
+import MenuFilters from "@/components/MenuFilters";
+import { PresentationContext } from "@/context/PresentationContext";
+import Loading from "@/components/Loading";
+import NavBar from "@/components/NavBar";
 
 const PhotoGallery = lazy(() => import("PhotoGallery/PhotoGallery"));
 

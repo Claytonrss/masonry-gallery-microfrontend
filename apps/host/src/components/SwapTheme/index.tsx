@@ -1,5 +1,5 @@
+import { ThemeContext } from "@/context/themeContext";
 import { useContext } from "react";
-import { ThemeContext } from "../../context/themeContext";
 import { Swap } from "react-daisyui";
 
 const SunIcon = () => {

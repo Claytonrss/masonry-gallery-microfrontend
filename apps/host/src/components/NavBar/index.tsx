@@ -1,5 +1,5 @@
 import { Button, Navbar } from "react-daisyui";
-import SwapTheme from "../SwapTheme";
+import SwapTheme from "@/components/SwapTheme";
 
 const NavBar = () => {
   return (
