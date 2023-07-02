@@ -1,14 +1,7 @@
 import express from "express";
-import cors from "cors";
+import { PhotosWithTotalResults, createClient } from "pexels";
 import dotenv from "dotenv";
-import { createClient, PhotosWithTotalResults } from "pexels";
-
 dotenv.config();
-
-const app = express();
-app.use(cors());
-
-const port = 3001;
 
 const API_KEY = process.env.PEXELS_API_KEY || "";
 const photosClient = createClient(API_KEY);
@@ -29,7 +22,9 @@ async function getPhotosByCategory(
   }
 }
 
-app.get("/photos/:category", async (req, res) => {
+const app = express();
+
+app.get("/api/photos/:category", async (req, res) => {
   const category = req.params.category;
 
   try {
@@ -39,9 +34,9 @@ app.get("/photos/:category", async (req, res) => {
     } else {
       const photos = response.photos.map((photo) => {
         return {
-          id: photo.id,
-          src: photo.src,
-          alt: photo.alt,
+          url: photo.src.original,
+          photographer: photo.photographer,
+          photographer_url: photo.photographer_url,
         };
       });
       res.json(photos);
@@ -52,6 +47,4 @@ app.get("/photos/:category", async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
-});
+export default app;
