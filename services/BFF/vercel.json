@@ -11,8 +11,5 @@
       "src": "/(.*)",
       "dest": "src/index.ts"
     }
-  ],
-  "env": {
-    "PEXELS_API_KEY": "@pexels_api_key"
-  }
+  ]
 }
