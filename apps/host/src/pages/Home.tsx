@@ -1,7 +1,7 @@
 import { Suspense, lazy, useContext } from "react";
 import MenuFilters from "@/components/MenuFilters";
 import { PresentationContext } from "@/context/PresentationContext";
-import Loading from "@/components/Loading";
+import { Loading } from "custom-component-library-with-tailwind";
 import NavBar from "@/components/NavBar";
 
 const PhotoGallery = lazy(() => import("PhotoGallery/PhotoGallery"));

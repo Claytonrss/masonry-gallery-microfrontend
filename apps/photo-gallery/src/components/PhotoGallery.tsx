@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { createAndShuffleArray } from "../utils/array";
 import { useFetchPhotosByCategory } from "../hooks/useFetchPhotosByCategory";
-import Loading from "./Loading";
+import { Loading } from "custom-component-library-with-tailwind";
 import PhotoGalleryMasonry from "./PhotoGalleryMasonry";
 import PhotoGalleryQuad from "./PhotoGalleryQuad";
 
