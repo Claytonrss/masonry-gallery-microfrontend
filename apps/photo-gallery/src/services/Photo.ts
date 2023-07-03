@@ -1,18 +1,15 @@
-import { PhotosWithTotalResults, createClient } from "pexels";
-
 const API_KEY = import.meta.env.VITE_API_KEY;
-const photosClient = createClient(API_KEY);
+const API_URL = import.meta.env.VITE_API_URL;
 
-export async function getPhotosByCategory(
-  category = "nature"
-): Promise<PhotosWithTotalResults | null> {
+export async function getPhotosByCategory(category = "nature") {
   try {
-    const response = await photosClient.photos.search({
-      query: category,
-      per_page: 18,
+    const response = await fetch(`${API_URL}/api/photos/${category}`, {
+      headers: { Authorization: `${API_KEY}` },
     });
-    if (!("photos" in response)) throw new Error("No photos found");
-    return response;
+
+    const data = await response.json();
+    if (!("photos" in data)) throw new Error("No photos found");
+    return data;
   } catch (error) {
     console.error(error);
     return null;

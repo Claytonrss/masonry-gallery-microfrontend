@@ -26,7 +26,7 @@ const PhotoGallery = ({ category, layout }: Props) => {
   }, [reorderPhotos]);
 
   if (error) {
-    return <div>Error: {error.error}</div>;
+    return <div>Error: {error.message}</div>;
   }
 
   if (!data) {

@@ -1,10 +1,10 @@
 import { useEffect, useReducer, useRef } from "react";
 import { getPhotosByCategory } from "../services/Photo";
-import { PhotosWithTotalResults, ErrorResponse } from "pexels";
+import { PhotosWithTotalResults } from "../types/gallery";
 
 interface State {
   data?: PhotosWithTotalResults;
-  error?: ErrorResponse;
+  error?: Error;
 }
 
 type Cache = { [url: string]: PhotosWithTotalResults };
@@ -12,7 +12,7 @@ type Cache = { [url: string]: PhotosWithTotalResults };
 type Action =
   | { type: "loading" }
   | { type: "fetched"; payload: PhotosWithTotalResults }
-  | { type: "error"; payload: ErrorResponse };
+  | { type: "error"; payload: Error };
 
 export function useFetchPhotosByCategory(category?: string): State {
   const cache = useRef<Cache>({});
@@ -59,7 +59,7 @@ export function useFetchPhotosByCategory(category?: string): State {
         }
       } catch (error) {
         if (cancelRequest.current) return;
-        dispatch({ type: "error", payload: error as ErrorResponse });
+        dispatch({ type: "error", payload: error as Error });
       }
     };
 
