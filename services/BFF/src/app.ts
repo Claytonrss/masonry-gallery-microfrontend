@@ -5,8 +5,6 @@ import { applyPhotoRoutes } from "./routes/photoRoutes";
 
 const app = express();
 
-console.log("process.env.NODE_ENV", process.env.NODE_ENV);
-
 app.use(corsWithOptions);
 app.use(corsMiddlewareHandlerError);
 
