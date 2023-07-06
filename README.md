@@ -1,4 +1,4 @@
-# Documentação do Projeto Microfrontends
+# Projeto Microfrontends
 
 ## Descrição do Projeto
 
@@ -41,6 +41,4 @@ Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICEN
 
 ## Contato
 
-Para qualquer dúvida, problema ou sugestão, entre em contato com [Clayton
-
-Rafael](https://www.linkedin.com/in/clayton-rafael).
+Para qualquer dúvida, problema ou sugestão, entre em contato comigo (https://www.linkedin.com/in/clayton-rafael).
