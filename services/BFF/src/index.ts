@@ -5,5 +5,4 @@ if (process.env.NODE_ENV !== "production") {
     console.log("Listening on port 3000");
   });
 }
-
 export default app;

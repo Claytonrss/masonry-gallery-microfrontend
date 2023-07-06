@@ -1,17 +1,12 @@
 import dotenv from "dotenv";
 import cors, { CorsOptions } from "cors";
-import { NextFunction, Request, Response } from "express";
+import { NextFunction, Request, Response, Express } from "express";
 dotenv.config();
 
-const CORS_ERROR_MESSAGE = "Not allowed by CORS";
-const whitelist: string[] = process.env.CORS_WHITELIST?.split(",") || [];
+export const CORS_ERROR_MESSAGE = "Not allowed by CORS";
+export const whitelist: string[] = process.env.CORS_WHITELIST?.split(",") || [];
 
-console.log("process.env.NODE_ENV: ", process.env.NODE_ENV);
-if (process.env.NODE_ENV !== "production") {
-  whitelist.push("*");
-}
-
-const corsOptions: CorsOptions = {
+export const corsOptions: CorsOptions = {
   origin: function (origin, callback) {
     if (whitelist.includes("*")) callback(null, true);
     else if (!origin || whitelist.indexOf(origin) === -1) {
@@ -35,3 +30,11 @@ export const corsMiddlewareHandlerError = (
   }
   next();
 };
+
+export function applyCorsMiddlewareOptions(app: Express) {
+  app.use(corsWithOptions);
+}
+
+export function applyCorsMiddlewareHandlerError(app: Express) {
+  app.use(corsMiddlewareHandlerError);
+}

@@ -1,14 +1,18 @@
 import { Router, Express } from "express";
-import { getPhotosByCategory } from "../services/photoService";
+import PhotoService from "../services/photoService";
 import { Photo } from "pexels";
 
 const router = Router();
+
+router.get("/", async (req, res) => {
+  res.json({ status: "OK" });
+});
 
 router.get("/api/photos/:category", async (req, res) => {
   const category = req.params.category;
 
   try {
-    const response = await getPhotosByCategory(category);
+    const response = await PhotoService.getPhotosByCategory(category);
     if (response === null) {
       res.status(500).send("Server error");
     } else {
@@ -23,7 +27,6 @@ router.get("/api/photos/:category", async (req, res) => {
       res.end();
     }
   } catch (err) {
-    console.error(err);
     res.status(500).send("Server error");
   }
 });
