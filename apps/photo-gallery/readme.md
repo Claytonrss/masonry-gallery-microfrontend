@@ -11,7 +11,6 @@ Este módulo foi implantado na Vercel e está disponível [neste link](https://m
 - Exibe uma galeria de fotos com dados consumidos de um BFF.
 - Possui duas opções de layout de exibição.
 - Capaz de reordenar as fotos. Estas funcionalidades são controladas via props e eventlistener pelo Host que consome a aplicação.
-- Utiliza o componente de carregamento (Loading) da biblioteca de componentes personalizada.
 
 ## Tecnologias
 

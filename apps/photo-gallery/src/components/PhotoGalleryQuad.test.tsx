@@ -2,32 +2,25 @@ import { render, screen } from "@testing-library/react";
 import PhotoGalleryQuad from "./PhotoGalleryQuad";
 
 describe("PhotoGalleryQuad", () => {
-  test("renders correctly", () => {
-    const mockPhotos = [
-      { id: 1, src: { portrait: "url1", landscape: "url2" }, alt: "alt1" },
-      { id: 2, src: { portrait: "url3", landscape: "url4" }, alt: "alt2" },
-      { id: 3, src: { portrait: "url5", landscape: "url6" }, alt: "alt3" },
-    ];
+  const dummyPhotos = [
+    { id: 1, src: { portrait: "url1", landscape: "url2" }, alt: "alt1" },
+    { id: 2, src: { portrait: "url3", landscape: "url4" }, alt: "alt2" },
+    { id: 3, src: { portrait: "url5", landscape: "url6" }, alt: "alt3" },
+    { id: 4, src: { portrait: "url7", landscape: "url8" }, alt: "alt4" },
+  ];
 
-    const mockOrder = [1, 2, 0];
+  const mockOrder = [1, 2, 0, 3];
 
-    render(<PhotoGalleryQuad photos={mockPhotos} orderPhotos={mockOrder} />);
+  it("renders correctly", () => {
+    render(<PhotoGalleryQuad photos={dummyPhotos} orderPhotos={mockOrder} />);
 
     const images = screen.getAllByRole("img");
-    expect(images.length).toBe(3);
+    expect(images.length).toBe(dummyPhotos.length);
   });
 
-  test("CSS grid applies correctly", () => {
-    const mockPhotos = [
-      { id: 1, src: { portrait: "url1", landscape: "url2" }, alt: "alt1" },
-      { id: 2, src: { portrait: "url3", landscape: "url4" }, alt: "alt2" },
-      { id: 3, src: { portrait: "url5", landscape: "url6" }, alt: "alt3" },
-    ];
-
-    const mockOrder = [1, 2, 0];
-
+  it("CSS grid applies correctly", () => {
     const { container } = render(
-      <PhotoGalleryQuad photos={mockPhotos} orderPhotos={mockOrder} />
+      <PhotoGalleryQuad photos={dummyPhotos} orderPhotos={mockOrder} />
     );
 
     const grid = container.getElementsByClassName(
@@ -37,26 +30,15 @@ describe("PhotoGalleryQuad", () => {
     expect(grid).toBeInTheDocument();
   });
 
-  test("photos display in correct order", () => {
-    const mockPhotos = [
-      { id: 1, src: { portrait: "url1", landscape: "url2" }, alt: "alt1" },
-      { id: 2, src: { portrait: "url3", landscape: "url4" }, alt: "alt2" },
-      { id: 3, src: { portrait: "url5", landscape: "url6" }, alt: "alt3" },
-    ];
-    const mockOrder = [2, 0, 1];
+  it("photos display in correct order", () => {
+    render(<PhotoGalleryQuad photos={dummyPhotos} orderPhotos={mockOrder} />);
 
-    render(<PhotoGalleryQuad photos={mockPhotos} orderPhotos={mockOrder} />);
+    const orders = screen
+      .getAllByRole("img")
+      .map((img) =>
+        img.parentElement?.getAttribute("style")?.replace(/\D/g, "")
+      );
 
-    const images = screen.getAllByRole("img");
-
-    expect(images[0].parentElement?.getAttribute("style")).toBe(
-      `order: ${mockOrder[0]};`
-    );
-    expect(images[1].parentElement?.getAttribute("style")).toBe(
-      `order: ${mockOrder[1]};`
-    );
-    expect(images[2].parentElement?.getAttribute("style")).toBe(
-      `order: ${mockOrder[2]};`
-    );
+    expect(orders.every((order, i) => +order! === mockOrder[i])).toBeTruthy();
   });
 });

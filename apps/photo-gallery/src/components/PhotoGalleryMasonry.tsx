@@ -9,7 +9,7 @@ const PhotoGalleryMasonry = ({ photos, orderPhotos }: GalleryProps) => {
   };
 
   return (
-    <div className="px-4 pb-4">
+    <div className="px-4 pb-4" data-testid="photo-gallery-masonry">
       <Masonry
         breakpointCols={breakpointColumnsObj}
         className="my-masonry-grid"

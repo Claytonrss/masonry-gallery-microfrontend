@@ -2,12 +2,13 @@ import { render, screen } from "@testing-library/react";
 import PhotoGalleryMasonry from "./PhotoGalleryMasonry";
 
 describe("PhotoGalleryMasonry", () => {
-  test("renders correctly", () => {
-    const mockPhotos = [
-      { id: 1, src: { portrait: "url1", landscape: "url2" }, alt: "alt1" },
-      { id: 2, src: { portrait: "url3", landscape: "url4" }, alt: "alt2" },
-      { id: 3, src: { portrait: "url5", landscape: "url6" }, alt: "alt3" },
-    ];
+  const mockPhotos = [
+    { id: 1, src: { portrait: "url1", landscape: "url2" }, alt: "alt1" },
+    { id: 2, src: { portrait: "url3", landscape: "url4" }, alt: "alt2" },
+    { id: 3, src: { portrait: "url5", landscape: "url6" }, alt: "alt3" },
+  ];
+
+  it("renders correctly", () => {
     const mockOrder = [1, 2, 0];
 
     render(<PhotoGalleryMasonry photos={mockPhotos} orderPhotos={mockOrder} />);
@@ -16,12 +17,7 @@ describe("PhotoGalleryMasonry", () => {
     expect(images.length).toBe(3);
   });
 
-  test("masonry grid applies correctly", () => {
-    const mockPhotos = [
-      { id: 1, src: { portrait: "url1", landscape: "url2" }, alt: "alt1" },
-      { id: 2, src: { portrait: "url3", landscape: "url4" }, alt: "alt2" },
-      { id: 3, src: { portrait: "url5", landscape: "url6" }, alt: "alt3" },
-    ];
+  it("masonry grid applies correctly", () => {
     const mockOrder = [1, 2, 0];
 
     const { container } = render(
@@ -37,12 +33,7 @@ describe("PhotoGalleryMasonry", () => {
     expect(masonryGridColumn).toBeInTheDocument();
   });
 
-  test("photos display in correct order", () => {
-    const mockPhotos = [
-      { id: 1, src: { portrait: "url1", landscape: "url2" }, alt: "alt1" },
-      { id: 2, src: { portrait: "url3", landscape: "url4" }, alt: "alt2" },
-      { id: 3, src: { portrait: "url5", landscape: "url6" }, alt: "alt3" },
-    ];
+  it("photos display in correct order", () => {
     const mockOrder = [2, 0, 1];
 
     render(<PhotoGalleryMasonry photos={mockPhotos} orderPhotos={mockOrder} />);

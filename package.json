@@ -11,8 +11,7 @@
   },
   "workspaces": [
     "apps/*",
-    "services/*",
-    "packages/*"
+    "services/*"
   ],
   "packageManager": "yarn@3.6.1"
 }

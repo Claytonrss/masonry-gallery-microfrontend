@@ -1,11 +1,5 @@
-let API_KEY = "";
-let API_URL = "";
-
-console.log("process.env: ", process.env);
-if (process.env.NODE_ENV !== "test") {
-  API_KEY = process.env.VITE_API_KEY || "";
-  API_URL = process.env.VITE_API_URL || "";
-}
+let API_KEY = process.env.VITE_API_KEY;
+let API_URL = process.env.VITE_API_URL;
 
 export async function getPhotosByCategory(category = "nature") {
   try {
@@ -13,11 +7,16 @@ export async function getPhotosByCategory(category = "nature") {
       headers: { Authorization: `${API_KEY}` },
     });
 
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
     const data = await response.json();
-    if (!("photos" in data)) throw new Error("No photos found");
+    if (!("photos" in data)) {
+      throw new Error("No photos found");
+    }
     return data;
   } catch (error) {
-    console.error(error);
     return null;
   }
 }
