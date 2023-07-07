@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { createAndShuffleArray } from "../utils/array";
 import { useFetchPhotosByCategory } from "../hooks/useFetchPhotosByCategory";
-import { Loading } from "custom-component-library-with-tailwind";
 import PhotoGalleryMasonry from "./PhotoGalleryMasonry";
 import PhotoGalleryQuad from "./PhotoGalleryQuad";
 
@@ -30,7 +29,12 @@ const PhotoGallery = ({ category, layout }: Props) => {
   }
 
   if (!data) {
-    return <Loading />;
+    return (
+      <div className="fixed inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="relative animate-spin rounded-full h-32 w-32 border-t-4 border-blue-400"></div>
+      </div>
+    );
   }
 
   return (

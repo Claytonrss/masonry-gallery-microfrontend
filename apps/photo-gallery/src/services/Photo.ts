@@ -1,5 +1,11 @@
-const API_KEY = import.meta.env.VITE_API_KEY;
-const API_URL = import.meta.env.VITE_API_URL;
+let API_KEY = "";
+let API_URL = "";
+
+console.log("process.env: ", process.env);
+if (process.env.NODE_ENV !== "test") {
+  API_KEY = process.env.VITE_API_KEY || "";
+  API_URL = process.env.VITE_API_URL || "";
+}
 
 export async function getPhotosByCategory(category = "nature") {
   try {
