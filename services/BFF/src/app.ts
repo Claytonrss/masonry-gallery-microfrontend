@@ -8,9 +8,9 @@ import { applyPhotoRoutes } from "./routes/photoRoutes";
 
 const app = express();
 
-applyAuthMiddleware(app);
 applyCorsMiddlewareOptions(app);
-applyPhotoRoutes(app);
 applyCorsMiddlewareHandlerError(app);
+applyAuthMiddleware(app);
+applyPhotoRoutes(app);
 
 export default app;

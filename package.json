@@ -10,6 +10,9 @@
     "node": ">=18.12.1"
   },
   "workspaces": [
-    "apps/*"
-  ]
+    "apps/*",
+    "services/*",
+    "packages/*"
+  ],
+  "packageManager": "yarn@3.6.1"
 }

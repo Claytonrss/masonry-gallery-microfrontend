@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Masonry from "react-masonry-css";
-import { GalleryProps } from "../types/gallery";
+import { GalleryProps } from "@/types/gallery";
 
 const PhotoGalleryMasonry = ({ photos, orderPhotos }: GalleryProps) => {
   const breakpointColumnsObj = {
