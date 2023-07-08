@@ -1,7 +1,6 @@
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import PhotoGallery from "./PhotoGallery";
 import { useFetchPhotosByCategory } from "@/hooks/useFetchPhotosByCategory";
-import { act } from "react-dom/test-utils";
 
 jest.mock("@/hooks/useFetchPhotosByCategory");
 

@@ -1,6 +1,6 @@
-import { MyRoutes } from "./routes";
-import { ThemeProvider } from "./context/themeContext";
-import { PresentationProvider } from "./context/PresentationContext";
+import { MyRoutes } from "@/routes";
+import { PresentationProvider } from "@/context/PresentationContext";
+import { ThemeProvider } from "@/context/themeContext";
 
 function App() {
   return (

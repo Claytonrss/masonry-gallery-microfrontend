@@ -30,6 +30,7 @@ const SwapTheme = () => {
   const { toggleTheme } = useContext(ThemeContext);
   return (
     <Swap
+      data-testid="swap-theme"
       onElement={<SunIcon />}
       offElement={<MoonIcon />}
       onClick={toggleTheme}
