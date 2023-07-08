@@ -1,4 +1,4 @@
-# Projeto Microfrontends
+# Projeto Galeria de Fotos com Microfrontends
 
 ## Descrição do Projeto
 
