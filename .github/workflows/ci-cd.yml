@@ -44,6 +44,11 @@ jobs:
           yarn build
           yarn test
 
+      - name: SonarCloud Scan
+        run: |
+          yarn global add sonarqube-scanner
+          yarn sonar
+
       - name: SonarCloud analysis (${{ matrix.app }})
         uses: sonarsource/sonarcloud-github-action@master
         env:
