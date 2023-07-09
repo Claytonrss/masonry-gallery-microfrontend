@@ -33,30 +33,7 @@
     "typescript": "^5.1.6"
   },
   "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "ts"
-    ],
-    "automock": false,
-    "resetMocks": false,
-    "rootDir": "src",
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.ts$",
-    "transform": {
-      "^.+\\.(t|j)s$": "ts-jest"
-    },
-    "collectCoverage": true,
-    "coverageReporters": [
-      "json",
-      "lcov",
-      "text",
-      "clover"
-    ],
-    "collectCoverageFrom": [
-      "**/*.{js,jsx,ts,tsx}",
-      "!**/*.d.ts"
-    ],
-    "coverageDirectory": "coverage",
+    "preset": "ts-jest",
     "testEnvironment": "node"
   }
 }
