@@ -44,6 +44,9 @@ jobs:
           yarn build
           yarn test
 
+      - name: List coverage directory
+        run: ls -l ${{ matrix.app }}/coverage
+
       - name: SonarCloud analysis (${{ matrix.app }})
         uses: sonarsource/sonarcloud-github-action@master
         env:

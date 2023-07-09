@@ -40,6 +40,14 @@
       "json",
       "ts"
     ],
+    "collectCoverage": true,
+    "coverageDirectory": "./../coverage",
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text",
+      "clover"
+    ],
     "automock": false,
     "resetMocks": false,
     "rootDir": "src",
