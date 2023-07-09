@@ -40,8 +40,10 @@ jobs:
           yarn build
           yarn test
 
-      - name: SonarCloud analysis
+      - name: SonarCloud analysis (${{ matrix.app }})
         uses: sonarsource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          projectBaseDir: ${{ matrix.app }}

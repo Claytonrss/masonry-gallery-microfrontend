@@ -41,14 +41,22 @@
     "automock": false,
     "resetMocks": false,
     "rootDir": "src",
-    "testRegex": ".spec.ts$",
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.ts$",
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
     },
-    "collectCoverageFrom": [
-      "**/*.(t|j)s"
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text",
+      "clover"
     ],
-    "coverageDirectory": "../coverage",
+    "collectCoverageFrom": [
+      "**/*.{js,jsx,ts,tsx}",
+      "!**/*.d.ts"
+    ],
+    "coverageDirectory": "coverage",
     "testEnvironment": "node"
   }
 }
