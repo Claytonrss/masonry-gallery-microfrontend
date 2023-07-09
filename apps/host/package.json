@@ -47,10 +47,10 @@
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "jsdom",
-    "collectCoverage": true,
     "transform": {
       "^.+\\.svg$": "jest-transform-stub"
     },
+    "collectCoverage": true,
     "coverageReporters": [
       "json",
       "lcov",
