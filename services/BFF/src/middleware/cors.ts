@@ -4,7 +4,7 @@ import { NextFunction, Request, Response, Express } from "express";
 dotenv.config();
 
 export const CORS_ERROR_MESSAGE = "Not allowed by CORS";
-export const whitelist: string[] = process.env.CORS_WHITELIST?.split(",") || [];
+export const whitelist: string[] = process.env.CORS_WHITELIST?.split(",") ?? [];
 
 export const corsOptions: CorsOptions = {
   origin: function (origin, callback) {

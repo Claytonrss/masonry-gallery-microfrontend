@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 
 type Layout = "default" | "masonry";
 
@@ -33,10 +33,13 @@ export const PresentationProvider = ({
   const [category, setCategory] = useState(initialValue.category);
   const [layout, setLayout] = useState<Layout>(initialValue.layout);
 
+  const value = useMemo(
+    () => ({ category, layout, setCategory, setLayout }),
+    [category, layout, setCategory, setLayout]
+  );
+
   return (
-    <PresentationContext.Provider
-      value={{ category, layout, setCategory, setLayout }}
-    >
+    <PresentationContext.Provider value={value}>
       {children}
     </PresentationContext.Provider>
   );
