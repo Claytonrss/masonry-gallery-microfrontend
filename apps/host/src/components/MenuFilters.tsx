@@ -4,7 +4,7 @@ import IconLayoutReorder from "@/assets/icon_layout_reorder.svg";
 import { PresentationContext } from "@/context/PresentationContext";
 import { useContext } from "react";
 import { Button, ButtonGroup } from "react-daisyui";
-import { categories, reorderPhotos } from "./MenuFilters.utils";
+import { categories, reorderPhotos } from "./MenuFiltersUtils";
 
 const MenuFilters = () => {
   const {

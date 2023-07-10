@@ -3,7 +3,7 @@ import { useContext, useEffect } from "react";
 import {
   PresentationContext,
   PresentationProvider,
-} from "./PresentationContext";
+} from "@/context/PresentationContext";
 
 describe("PresentationContext", () => {
   it("should have the correct initial values", () => {

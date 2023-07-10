@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { ThemeContext, ThemeProvider } from "./themeContext";
+import { ThemeContext, ThemeProvider } from "@/context/themeContext";
 import { act, render, waitFor } from "@testing-library/react";
 
 describe("ThemeContext", () => {

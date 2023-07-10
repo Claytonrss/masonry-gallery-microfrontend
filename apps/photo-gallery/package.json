@@ -50,6 +50,9 @@
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "jsdom",
+    "transform": {
+      "^.+\\.svg$": "jest-transform-stub"
+    },
     "collectCoverage": true,
     "coverageReporters": [
       "json",
@@ -65,7 +68,12 @@
       "<rootDir>/jest.setup.ts"
     ],
     "roots": [
-      "<rootDir>/src"
+      "<rootDir>/src",
+      "<rootDir>/__tests__"
+    ],
+    "testMatch": [
+      "<rootDir>/__tests__/**/*.{ts,tsx}",
+      "<rootDir>/src/**/?(*.)+(spec|test).{ts,tsx}"
     ],
     "moduleDirectories": [
       "node_modules",

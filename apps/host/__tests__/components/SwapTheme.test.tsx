@@ -1,5 +1,5 @@
 import { render, fireEvent, act } from "@testing-library/react";
-import SwapTheme from "./SwapTheme";
+import SwapTheme from "@/components/SwapTheme";
 import { ThemeContext } from "@/context/themeContext";
 
 test("should render SwapTheme component", () => {

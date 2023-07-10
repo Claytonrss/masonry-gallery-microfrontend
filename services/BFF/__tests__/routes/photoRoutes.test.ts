@@ -1,9 +1,9 @@
 import express from "express";
 import request from "supertest";
-import { applyPhotoRoutes } from "../routes/photoRoutes";
-import PhotoService from "../services/photoService";
+import { applyPhotoRoutes } from "@/routes/photoRoutes";
+import PhotoService from "@/services/photoService";
 
-jest.mock("../services/photoService");
+jest.mock("@/services/photoService");
 
 describe("Photo Routes", () => {
   let app: express.Express;

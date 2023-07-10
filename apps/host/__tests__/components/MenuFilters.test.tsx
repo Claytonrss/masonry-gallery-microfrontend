@@ -1,10 +1,10 @@
 import { render, fireEvent, waitFor, act } from "@testing-library/react";
-import MenuFilters from "./MenuFilters";
-import { categories, reorderPhotos } from "./MenuFilters.utils";
+import MenuFilters from "@/components/MenuFilters";
+import { categories, reorderPhotos } from "@/components/MenuFiltersUtils";
 import { PresentationContext } from "@/context/PresentationContext";
 
-jest.mock("./MenuFilters.utils", () => ({
-  ...jest.requireActual("./MenuFilters.utils"),
+jest.mock("@/components/MenuFiltersUtils", () => ({
+  ...jest.requireActual("@/components/MenuFiltersUtils"),
   reorderPhotos: jest.fn(),
 }));
 

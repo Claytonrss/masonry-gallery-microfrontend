@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import PhotoGalleryMasonry from "./PhotoGalleryMasonry";
+import PhotoGalleryMasonry from "@/components/PhotoGalleryMasonry";
 
 describe("PhotoGalleryMasonry", () => {
   const mockPhotos = [
