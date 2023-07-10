@@ -1,5 +1,5 @@
 import { PhotosWithTotalResults } from "pexels";
-import PhotoService from "./photoService";
+import PhotoService from "@/services/photoService";
 
 const mockSearch = jest.fn();
 jest.mock("pexels", () => ({

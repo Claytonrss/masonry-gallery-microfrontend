@@ -50,7 +50,20 @@
     ],
     "automock": false,
     "resetMocks": false,
-    "rootDir": "src",
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.ts$"
+    "roots": [
+      "<rootDir>/src",
+      "<rootDir>/__tests__"
+    ],
+    "testMatch": [
+      "<rootDir>/__tests__/**/*.{ts,tsx}",
+      "<rootDir>/src/**/?(*.)+(spec|test).{ts,tsx}"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    }
   }
 }

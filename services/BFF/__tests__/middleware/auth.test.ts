@@ -1,7 +1,11 @@
 import express from "express";
 import request from "supertest";
-import { applyPhotoRoutes } from "../routes/photoRoutes";
-import { BFF_API_KEY, UNAUTHORIZED_MESSAGE, applyAuthMiddleware } from "./auth";
+import { applyPhotoRoutes } from "@/routes/photoRoutes";
+import {
+  BFF_API_KEY,
+  UNAUTHORIZED_MESSAGE,
+  applyAuthMiddleware,
+} from "@/middleware/auth";
 
 describe("Auth Middleware", () => {
   let app: express.Express;

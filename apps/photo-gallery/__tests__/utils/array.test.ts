@@ -1,4 +1,4 @@
-import { createAndShuffleArray } from "./array";
+import { createAndShuffleArray } from "@/utils/array";
 
 describe("createAndShuffleArray function", () => {
   it("returns an array of the correct size", () => {

@@ -1,4 +1,4 @@
-import { reorderPhotos } from "./MenuFilters.utils";
+import { reorderPhotos } from "@/components/MenuFiltersUtils";
 
 describe("MenuFilters.utils", () => {
   it("should dispatch reorderPhotos event on window", () => {

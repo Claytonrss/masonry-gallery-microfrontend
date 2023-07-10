@@ -1,12 +1,12 @@
 import express from "express";
 import request from "supertest";
-import { applyPhotoRoutes } from "../routes/photoRoutes";
+import { applyPhotoRoutes } from "@/routes/photoRoutes";
 import {
   applyCorsMiddlewareHandlerError,
   applyCorsMiddlewareOptions,
   whitelist,
   CORS_ERROR_MESSAGE,
-} from "./cors";
+} from "@/middleware/cors";
 
 describe("CORS Middleware", () => {
   let app: express.Express;

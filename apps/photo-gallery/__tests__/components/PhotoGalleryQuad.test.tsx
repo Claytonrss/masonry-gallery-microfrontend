@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import PhotoGalleryQuad from "./PhotoGalleryQuad";
+import PhotoGalleryQuad from "@/components/PhotoGalleryQuad";
 
 describe("PhotoGalleryQuad", () => {
   const dummyPhotos = [
