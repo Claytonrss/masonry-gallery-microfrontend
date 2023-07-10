@@ -10,7 +10,7 @@ const PhotoGalleryQuad = ({ orderPhotos, photos }: GalleryProps) => {
             <img
               className="h-auto max-w-full rounded-lg"
               src={src.landscape}
-              alt={alt || "Photo by Pexels"}
+              alt={alt ?? "Photo by Pexels"}
             />
           </motion.div>
         ))}

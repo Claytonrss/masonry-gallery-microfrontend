@@ -20,7 +20,7 @@ const PhotoGalleryMasonry = ({ photos, orderPhotos }: GalleryProps) => {
             <img
               className="h-auto max-w-full rounded-lg mt-4"
               src={index % 2 === 0 ? src.portrait : src.landscape}
-              alt={alt || "Photo by Pexels"}
+              alt={alt ?? "Photo by Pexels"}
             />
           </motion.div>
         ))}
