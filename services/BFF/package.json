@@ -41,7 +41,7 @@
       "ts"
     ],
     "collectCoverage": true,
-    "coverageDirectory": "./../coverage",
+    "coverageDirectory": "./coverage",
     "coverageReporters": [
       "json",
       "lcov",
