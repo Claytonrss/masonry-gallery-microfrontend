@@ -13,6 +13,7 @@ async function getPhotosByCategory(
       query: category,
       per_page: 18,
     });
+    console.log("response: ", response);
     if (!("photos" in response)) throw new Error("No photos found");
     return response;
   } catch (error) {

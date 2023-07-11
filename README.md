@@ -49,8 +49,6 @@ Aqui está um resumo dos passos que o pipeline automatiza:
 
 O pipeline é executado sempre que um pull request é feito para o branch `main`.
 
-![SonarCloud analysis](./assets/diagram.png)
-
 ### Status da Pipeline
 
 O status da pipeline pode ser verificado na aba "Actions" do repositório GitHub. Lá, você pode ver o progresso de cada execução da pipeline e verificar se houve algum erro.
