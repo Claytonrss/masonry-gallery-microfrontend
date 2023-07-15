@@ -1,6 +1,6 @@
 # Projeto Galeria de Fotos com Microfrontends
 
-## Descrição do Projeto
+## Descrição do Projeto com Microfrontends
 
 Este projeto utiliza a arquitetura de microfrontends para construir uma aplicação de galeria de fotos. Consiste em algumas partes principais: um Microfrontend Host, um Microfrontend PhotoGallery, uma biblioteca de componentes e um BFF (Back-end For Front-end).
 
