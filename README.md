@@ -4,7 +4,13 @@
 
 Este projeto utiliza a arquitetura de microfrontends para construir uma aplicação de galeria de fotos. Consiste em algumas partes principais: um Microfrontend Host, um Microfrontend PhotoGallery, uma biblioteca de componentes e um BFF (Back-end For Front-end).
 
-O Microfrontend Host é responsável por orquestrar os microfrontends, enquanto o Microfrontend PhotoGallery exibe a galeria de fotos, o BFF atua como um ponto de acesso centralizado, buscando fotos da API do Pexels e enviando-as para o Microfrontend PhotoGallery. O projeto está publicado na Vercel e pode ser acessado por meio deste link <https://masonry-gallery-microfrontend-host.vercel.app/>.
+O Microfrontend Host é responsável por orquestrar os microfrontends, enquanto o Microfrontend PhotoGallery exibe a galeria de fotos, o BFF atua como um ponto de acesso centralizado, buscando fotos da API do Pexels e enviando-as para o Microfrontend PhotoGallery.
+
+## Live Preview
+
+O projeto está publicado na Vercel e pode ser acessado por meio deste link <https://masonry-gallery-microfrontend-host.vercel.app/>.
+
+![captura-pipeline_001](https://raw.githubusercontent.com/Claytonrss/masonry-gallery-microfrontend/master/assets/preview.gif)
 
 ## Tecnologias Utilizadas
 
