@@ -4,7 +4,7 @@
 
 Este projeto utiliza a arquitetura de microfrontends para construir uma aplicação de galeria de fotos. Consiste em algumas partes principais: um Microfrontend Host, um Microfrontend PhotoGallery, uma biblioteca de componentes e um BFF (Back-end For Front-end).
 
-O Microfrontend Host é responsável por orquestrar os microfrontends, enquanto o Microfrontend PhotoGallery exibe a galeria de fotos. A biblioteca de componentes é usada para compartilhar componentes entre os microfrontends. Por último, o BFF atua como um ponto de acesso centralizado, buscando fotos da API do Pexels e enviando-as para o Microfrontend PhotoGallery.
+O Microfrontend Host é responsável por orquestrar os microfrontends, enquanto o Microfrontend PhotoGallery exibe a galeria de fotos, o BFF atua como um ponto de acesso centralizado, buscando fotos da API do Pexels e enviando-as para o Microfrontend PhotoGallery. O projeto está publicado na Vercel e pode ser acessado por meio deste link <https://masonry-gallery-microfrontend-host.vercel.app/>.
 
 ## Tecnologias Utilizadas
 
@@ -46,8 +46,25 @@ Aqui está um resumo dos passos que o pipeline automatiza:
 3. **Install dependencies**: As dependências do projeto são instaladas com `yarn install --frozen-lockfile`.
 4. **Build and test**: A versão de produção do projeto é construída e os testes são executados com `yarn build` e `yarn test` respectivamente.
 5. **SonarCloud analysis**: A qualidade do código é analisada com o SonarCloud.
+6. **Deploy**: O Projeto está publicado na Vercel, configurado para executar o deploy automaticamente e pode ser acessado por meio deste link <https://masonry-gallery-microfrontend-host.vercel.app/>.
 
 O pipeline é executado sempre que um pull request é feito para o branch `main`.
+
+#### Template para descrição de Pull Request + Verificação de Deploy automático da Vercel em cada uma das aplicações
+
+![captura-pipeline_001](./assets/captura_pipeline_001.png "captura-pipeline_001.png")
+
+#### Verificação Executada pelo SonarCloud que acontece em cada uma das aplicações
+
+![captura-pipeline_002](./assets/captura_pipeline_002.png "captura-pipeline_002.png")
+
+#### Resultado das verificações realizadas na painel do SonarCloud
+
+![captura-pipeline_003](./assets/captura_pipeline_003.png "captura-pipeline_003.png")
+
+#### Visão do acompanhamento de todas as pipelines sendo verificadas antes do merge do Pull Request
+
+![captura-pipeline_004](./assets/captura_pipeline_004.png "captura-pipeline_004.png")
 
 ### Status da Pipeline
 
@@ -67,4 +84,4 @@ Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICEN
 
 ## Contato
 
-Para qualquer dúvida, problema ou sugestão, entre em contato comigo (https://www.linkedin.com/in/clayton-rafael).
+Para qualquer dúvida, problema ou sugestão, entre em contato comigo (<https://www.linkedin.com/in/clayton-rafael>).
