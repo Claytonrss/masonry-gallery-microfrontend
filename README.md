@@ -80,6 +80,12 @@ O status da pipeline pode ser verificado na aba "Actions" do repositório GitHub
 
 O GitHub Actions está configurado para enviar notificações por e-mail sempre que uma execução da pipeline falha.
 
+### Observabilidade
+
+Foi configurado na aplicação a ferramenta New Relic para o acompanhamento e extração de métricas de performance, acessos e outros.
+
+![newrelic.png](./assets/newrelic.png "newrelic.png")
+
 ## Contribuição
 
 Contribuições são bem-vindas! Se tiver uma ideia para uma funcionalidade ou para a correção de um bug, sinta-se à vontade para abrir uma issue ou fazer um pull request.
